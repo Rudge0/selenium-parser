@@ -1,6 +1,5 @@
 import os
 import django
-import time
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "selenium_iphone_project.settings")
 django.setup()
@@ -23,7 +22,7 @@ def main():
 
     driver.get("https://brain.com.ua")
 
-    # Пошук
+    # Searching
     search_input = wait.until(
         EC.presence_of_element_located((
             By.XPATH,
@@ -40,7 +39,7 @@ def main():
     )
     search_button.click()
 
-    # Клік по першому результату
+    # First product click
     first_product = wait.until(
         EC.element_to_be_clickable((
             By.XPATH,
@@ -54,7 +53,7 @@ def main():
         By.XPATH, "//h1[contains(@class,'desktop-only-title')]"
     )))
 
-    # Передаємо driver у парсер
+    # Substituting driver to the scraper
     scrape_product(driver)
     driver.quit()
 
