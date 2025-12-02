@@ -21,7 +21,6 @@ msedgedriver.exe
 .vscode/
 .DS_Store
 Thumbs.db
-*.csv
 *.dll
 *.so
 *.cache
